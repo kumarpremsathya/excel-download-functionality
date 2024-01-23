@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Django Project</title>
+    <style>
+        /* Add some basic styling for the links */
+        .topnav a {
+            text-decoration: none;
+            color: black;
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Add a class to highlight the clicked link */
+        .topnav .active-link {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+   <div class="topnav">
+      <a href="#" onclick="highlightLink(this)" class="active-link">Home</a>
+      <a href="#"  onclick="highlightLink(this)">Market Data</a>
+      <a href="#"  onclick="highlightLink(this)">About us</a>
+      <a href="#"  onclick="highlightLink(this)">Contact</a>
+   </div>
+
+   <script>
+        // Set the 'active-link' class to the first anchor tag initially
+        document.querySelector('.topnav a').classList.add('active-link');
+
+        function highlightLink(element) {
+            // Remove the 'active-link' class from all links
+            var links = document.querySelectorAll('.topnav a');
+            links.forEach(function(link) {
+                link.classList.remove('active-link');
+            });
+
+            // Add the 'active-link' class to the clicked link
+            element.classList.add('active-link');
+        }
+    </script>
+
+</body>
+</html>
